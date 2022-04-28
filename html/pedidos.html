@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dulce Gusto | Pedí tu presupuesto - Envíos a Rosario</title>
+    <meta name="description" content="Hacé tu pedido, no te pierdas la oportunidad de probar estas exquiciteces!">
+    <meta name="keywords" content="Pastelería, torta, porciones, desayuno, budín, tortas personalizadas, huevo de pascuas, alfajores, alfajor de maicena, alfacookies, delibery, rosario, dulce, postre, cheescake, brownie, oreo, lemon pie.">
+    <meta name="author" content="Marianella Giglione">
+    <meta name="copyright" content="Dulce Gusto SA">
+    <meta name="robots" content="index, follow">
+	<!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Style CSS -->
+  	<link rel="stylesheet" href="../css/main.css">
+	<!-- Style WOW -->
+	<link rel="stylesheet" href="../css/animate.css">
+	<script src="../js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+</head>
+<body>
+	<!-- inicia nav -->
+    <nav class="navbar navbar-expand-md sticky-top navbar-light" id="navBg">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="../index.html">
+				<img src="../img/DG_Logo.svg" alt="logo de dulce gusto">
+			</a>
+			<button class="navbar-toggler p-1" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav ms-auto mb-3 mb-lg-0 text-center">
+					<li class="nav-item navItems">
+						<a class="nav-link fs-5 me-3 w-100" aria-current="page" href="../html/historia.html">Historia</a>
+					</li>
+					<li class="nav-item navItems">
+						<a class="nav-link fs-5 me-3 w-100" href="../html/productos.html">Productos</a>
+					</li>
+					<li class="nav-item navItems">
+						<a class="nav-link fs-5 me-3 w-100" href="../html/pedidos.html">Pedidos</a>
+					</li>                    
+					<li class="nav-item navItems">
+						<a class="nav-link fs-5 me-4 w-100" href="../html/clientes.html">Clientes</a>
+					</li>
+				</ul>
+		  </div>
+		</div>
+	</nav>
+	<!-- finaliza nav -->
+	<!-- inicia contenido principal -->
+	<main>
+		<h2 class="text-center mt-4">-PEDÍ TU PRESUPUESTO-</h2>
+		<form action="envio.php" method="post" id="form__pedidos">
+			<fieldset class="form__pedidos--datos" data-wow-duration="1s">
+				<legend>DATOS PERSONALES</legend>
+				<div>
+					<label for="nombre">Nombre y apellido</label>
+					<input type="text" class="completar" name="nombre" id="nombre"><br>
+					<label for="email">Email</label>
+					<input type="email" class="completar" name="email" id="email">
+				</div>
+			</fieldset>
+			<fieldset class="form__pedidos--productos" data-wow-duration="1s" data-wow-delay="1s">
+				<legend>PRODUCTOS</legend>
+				<div>
+					<div class="form-check">
+						<input type="checkbox" value="tortas" id="tortas" class="form-check-input me-2" name="tortas">
+						<label for="tortas" class="form-check-label">Tortas</label>
+					</div>
+					<div class="form-check">
+						<input type="checkbox" value="desayunos" name="desayunos" class="form-check-input me-2" id="desayunos">
+						<label for="desayunos" class="form-check-label">Desayunos</label>
+					</div>
+					<div class="form-check">
+						<input type="checkbox" value="alfajores" name="alfajores" class="form-check-input me-2" id="alfajores">
+						<label for="alfajores" class="form-check-label">Alfajores</label>
+					</div>	
+					<div class="form-check">
+						<input type="checkbox" value="box" name="box" class="form-check-input me-2" id="box">
+						<label for="box" class="form-check-label">Box</label>
+					</div>
+				</div>
+				<span>
+					<label for="codigo">Código del producto
+					<p class="fst-italic text-secondary">Si se requiere más de un código, colocar guión entre los mismos. Ejemplo: T001 - B050</p></label> 
+					<input type="codigo" placeholder="Código producto/s" name="codigo" id="codigo"> 
+				</span>
+			</fieldset>
+			<fieldset class="form__pedidos--entrega" data-wow-duration="1s" data-wow-delay="2s">
+				<legend>ENTREGA</legend>
+				<div>	
+					<input type="radio" name="pedido" value="domicilio" id="domicilio">
+					<label for="domicilio">Envío a domicilio</label>
+				</div>
+				<div>
+					<select name="zonas" class="completar" id="zona">
+						<option value="norte">Elegir zona</option>
+						<option value="norte">Alberdi</option>
+						<option value="fisherton">Fisherton</option>
+						<option value="otra">Otra</option>
+					</select>	
+					<label for="direccion"></label>
+					<input type="direccion" class="completar" placeholder="Dirección" name="direccion" id="direccion">	
+				</div>
+				<div>
+					<input type="radio" name="pedido" value="local" id="local">
+					<label for="local">Retiro en el local</label>
+				</div>	
+				<div>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3350.738644972532!2d-60.70840568496769!3d-32.8786337809414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95b653b89ecacb8d%3A0x94a58658574f8474!2sVasallo%204005%2C%20S2000%20Rosario%2C%20Santa%20Fe!5e0!3m2!1ses-419!2sar!4v1644874478259!5m2!1ses-419!2sar" style="border:0;" loading="lazy"></iframe>
+				</div>
+			</fieldset>
+			<div class="form__pedidos--solicitar" data-wow-duration="1s" data-wow-delay="2s">
+				<label for="mensaje">Dejá tu mensaje</label>
+				<textarea name="comentario" id="comentario" cols="30" rows="5" placeholder="Mensaje"></textarea>
+				<div>
+					<a href="./ERROR404.html" class="btn" role="button">Enviar</a>
+					<a href="./ERROR404.html" class="btn" role="button">Cancelar</a>
+				</div>
+			</div>
+		</form>
+	</main>
+	<!-- finaliza contenido principal -->
+	<!-- inicia footer -->
+    <div class="container-fluid footer">
+		<div class="footerContenedor1">
+			<h3 class="pt-1 mt-2 fs-5 fw-bold">CONTACTO</h3>
+			<section>
+				<article>
+					<img src="../img/celular.png" alt="celular" class="footerImg">
+					<p class="fs-6">Celular: 341 3-070985</p>
+				</article>
+				<article>
+					<img src="../img/mail.png" alt="email" class="footerImg">
+					<p class="fs-6">Email: dulcegusto@gmail.com</p>
+				</article>
+				<article>
+					<img src="../img/ubicacion.png" alt="ubicacion" class="footerImg">
+					<p class="fs-6">Ubicación: Vasallo 4005, Rosario</p>
+				</article>
+				<article>
+					<img src="../img/instagram.png" alt="instagram" class="footerImg">
+					<p class="fs-6"> <a href="https://www.instagram.com/dg_tortas/" target="_blank"> Instagram: @dg_tortas </a></p>
+				</article>
+			</section>
+		</div>
+		<section class="footerContenedor2">
+			<img src="../img/DG_Pastelería.svg" alt="logo" class="footerLogo">
+			<p class="my-2 fs-5 fw-bold">Recibí novedades</p>
+			<div class="input-group mb-3">
+				<input type="text" class="form-control" placeholder="Email" aria-label="Recipient's mail" aria-describedby="button-addon2">
+				<a href="./ERROR404.html" class="btn btn-outline-secondary" role="button" id="button-addon2">Enviar</a>
+			</div>
+		</section>
+	</div>
+	<!-- finaliza footer -->
+	
+	<!-- Optional JavaScript -->
+	<!-- Option 1: Bootstrap Bundle with Popper -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>

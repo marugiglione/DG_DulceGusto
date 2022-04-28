@@ -1,0 +1,365 @@
+
+// --> style: index.html <-- //
+body {
+	background-color: map-get($map:$paleta,$key:'color_2');
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    h2 {
+        font-family: $fontTitle;
+    }
+}
+.imgPpal {
+	position:relative;
+	display: inline-block;
+	text-align: center;
+    width: $w-100;
+    img {
+        width: $w-100;
+        div {
+            width: $w-100;
+        }
+    }
+}
+.txtImg1 {
+    @include position(absolute, 4%, 5%, $fontUno, 5vw);
+}
+.txtImg2 {
+    @include position(absolute, 15%, 8%, $fontDos, 8vw);
+    font-weight: 1,99.6,738;
+	font-style: italic;
+}
+.txtImg3 {
+    @include position(absolute, 31%, 5%, $fontUno, 6vw);
+}
+.carouselContenedor {
+    @include flex(column, wrap, center, center);
+    a {
+        margin-bottom: 5%;
+        width: $w-70;
+    }
+}
+#carouselImg {
+    width: $w-100;
+    border-radius: 0.25rem;
+}
+
+@media screen and (min-width: 576px) {
+    .carouselContenedor {
+        flex-direction: row;
+        a {
+            margin: 3.12%;
+            width: $w-25;
+        }
+    }
+}
+
+// --> style: historia.html <-- //
+.historia {
+    @include flex(column, wrap, center, center);
+}
+.historiaImg {
+    @include flex(row, nowrap, space-around, center);
+    margin-block: 20px;
+    img {
+        width: $w-40;
+        padding: 4px;
+        box-shadow: 0px 0px 6px 5px rgba(138, 201, 192, 0.5);
+    }
+}
+.historiaTxt {
+    background-color: map-get($map:$paleta,$key:'color_3');
+    padding: 20px 40px;
+    margin-inline: 10px;
+    margin-bottom: 20px;
+        p {
+            font-size: 1em;
+            text-align: justify;
+            em {
+                font-style: italic;
+                font-size: 1.1em;
+            }
+        }
+}
+
+@media screen and (min-width: 768px) {
+    .historiaImg {
+        width: $w-80;
+        img {
+            width: 300px;
+        }
+    }
+    .historiaTxt {
+        width: 80%;
+        margin-right: 20px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .historia {
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    .historiaImg {
+        img {
+            width: $w-40;
+        }
+    }
+    .historiaTxt {
+        padding-inline: 20px;
+    }
+}
+
+// --> style: pedidos.html <-- //
+#form__pedidos {
+    display: grid;
+    grid-template-columns: 1fr;
+	grid-template-rows: auto;
+    width: $w-100;
+    padding: 10px 5%;
+	grid-template-areas: "datos" "productos" "entrega" "solicitar";
+    font-family: $fontMain;
+    @include text(1em, 2em, center);
+    fieldset {
+        border-style: groove;
+        border-width: 2px;
+        border-color: threedface;
+        border-image: initial;
+        legend {
+            float: none;
+            width: auto;
+            padding-inline: 20px;
+        }
+    }
+}
+.form__pedidos--datos {
+    grid-area: datos;
+    padding-bottom: 3%;
+    margin-bottom: 5%;
+    div {
+        @include flex(column, wrap, center, center);
+    }
+}
+    .completar {
+        text-align: center;
+        width: $w-50;
+        color: map-get($map:$paleta,$key:'color_4');
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+.form__pedidos--productos {
+    grid-area: productos;
+    padding-bottom: 3%;
+    margin-bottom: 5%;
+    @include flex(column, wrap, center, center);
+    div {
+        @include flex(row, wrap, center, center);
+        width: $w-75;
+        div {
+            width: $w-50;
+        }
+    }
+    span {
+        input {
+            @extend .completar;
+        }
+    }
+}
+.form__pedidos--entrega {
+    grid-area: entrega;
+    padding-bottom: 3%;
+    margin-bottom: 5%;
+    @include flex(column, wrap, center, center);
+    div {
+        padding-bottom: 2%;
+        iframe {
+            width: $w-100;
+            border-radius: 0.60rem;
+        }
+    }
+}
+.form__pedidos--solicitar {
+    grid-area: solicitar;
+    padding-bottom: 3%;
+    margin-bottom: 5%;
+    @include flex(column, wrap, center, center);
+    div {
+        width: $w-100;
+        textarea {
+            @extend .completar;
+            margin-bottom: 5%;
+        }
+    }
+}
+.btn {
+    color: map-get($map:$paleta,$key:'color_4');
+    background-clip: padding-box;
+    border: 1px solid map-get($map:$paleta,$key:'color_6');
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    margin: 10px;
+    &:hover{
+        color: map-get($map:$paleta,$key:'color_5');
+        border-color: map-get($map:$paleta,$key:'color_5');
+        background-color: map-get($map:$paleta,$key:'color_3');
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #form__pedidos {
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-areas: ". datos ." ". productos ." ". entrega ." ". solicitar .";
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    #form__pedidos {
+        grid-template-columns: 1fr .1fr 1fr;
+        grid-template-areas: "datos . entrega" "productos . entrega" "solicitar solicitar solicitar";
+    }
+}
+
+// --> style: clientes.html <-- //
+.main__clientes {
+    @include flex(column, wrap, center, center);
+    box-sizing: border-box;
+}
+.clientes {
+    @include flex(column, wrap, center, center);
+    margin: 20px;
+    text-align: center;
+    img {
+        width: 150px;
+        height: 150px;
+		object-fit: cover;
+        margin: 10px;
+    }
+    ul {
+        list-style: none;
+        padding-left: 0px;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    main {
+        align-items: flex-start;
+        align-content: center;
+    }
+    .clientes {
+        @include flex(row, auto, space-between, auto);
+        text-align: start;
+        width: 700px;
+        border: double;
+        h3, ul {
+            padding-left: 20px;
+			padding-right: 10px;
+        }
+    }
+    .clientesInfo {
+        width: $w-25;
+    }
+    .clientesInfo {
+        width: $w-75;
+    }
+}
+
+// --> style: productos.html <-- //
+.productos__presentacion {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    width: $w-100;
+    margin-top: 2%;
+    grid-template-areas: "filtro" "opciones" "volver";
+}
+.productos__filtro {
+    grid-area: filtro;
+}
+.productos__opciones {
+    grid-area: opciones;
+}
+.volver {
+    grid-area: volver;
+}
+.productos__filtro {
+    text-align: center;
+	font-size: 1rem;
+	margin-top: 20px;
+	margin-bottom: 20px;
+    ul {
+        background-color: map-get($map:$paleta,$key:'color_3');
+        border-radius: 0.30rem;
+        border-style: groove;
+        border-width: 2px;
+        border-color: threedface;
+        border-image: initial;
+        li {
+            list-style: none;
+            a {
+                text-decoration: none;
+                list-style: none;
+                color: black;
+                &:hover{
+                color: map-get($map:$paleta,$key:'color_5');
+                }
+            }   
+        }
+    }
+}
+.card {
+    margin: 2%;
+    img {
+        margin-top: 0.75rem;
+        border-bottom-right-radius: calc(0.25rem - 1px);
+        border-bottom-left-radius: calc(0.25rem - 1px);
+    }
+}
+.card-desayunos {
+    padding-inline: 20px;
+    img {
+        width: $w-40;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .productos__presentacion {
+        grid-template-columns: 1fr 6fr 1fr;
+        grid-template-areas: "filtro opciones volver";
+    }
+    .card {
+        width: $w-40;
+    }
+    .card-desayunos {
+        width: $w-75;
+    }
+    .productos__filtro {
+        text-align: left;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .card {
+        width: $w-25;
+    }
+    .card-desayunos {
+        width: $w-50;
+    }
+}
+
+// --> style: ERROR404.html <-- //
+.errorContenedor {
+    @include flex(column, auto, center, center);
+}
+
+
+@media screen and (min-width: 768px) {
+    .errorContenedor {
+        @include flex(row, auto, center, center);
+    }
+}
